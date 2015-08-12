@@ -1,12 +1,7 @@
 class soapui {
 
-##  package { 'SoapUI':
-##    ensure   => 'installed',
-##    provider => 'appdmg',
-##    source   => 'http://nchc.dl.sourceforge.net/project/soapui/soapui/5.2.0/SoapUI-5.2.0.dmg'
-##  }
 $soap = 'SoapUI-5.2.0-mac-bin.zip'
-$source = 'http://192.168.21.151/SoapUI-5.2.0-mac-bin.zip'
+$source = 'http://cdn01.downloads.smartbear.com/soapui/5.2.0/SoapUI-5.2.0-mac-bin.zip?_ga=1.230889759.1857027870.1439349046'
 
 exec { 'install soapui':
   unless => "test -d /Applications/SoapUI-5.2.0",
