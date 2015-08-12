@@ -9,7 +9,7 @@ $soap = 'SoapUI-5.2.0-mac-bin.zip'
 $source = 'http://192.168.21.151/SoapUI-5.2.0-mac-bin.zip'
 
 exec { 'install soapui':
-  ensure => absent,
+  onlyif => "test -d /Applications/SoapUI-5.2.0"
   command => "cd /Applications/ && curl -O ${source} && open ${soap}",
 }
 }
